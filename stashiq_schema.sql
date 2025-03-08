@@ -1,4 +1,5 @@
--- Use the target database (ensure it's created and your user has privileges)
+-- Create the database if it doesn't exist, then switch to it
+CREATE DATABASE IF NOT EXISTS stashiq_db;
 USE stashiq_db;
 
 -- Drop tables if they exist (optional cleanup if re-running script)
@@ -86,5 +87,5 @@ CREATE TABLE consumption_logs (
     ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
--- Done!
-SELECT 'Schema created successfully without sample items!' AS Status;
+-- Confirmation message
+SELECT 'StashIQ DB and tables created successfully!' AS Status;
